@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Missions = () => {
+  const state = useSelector((state) => state.allMission);
+
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchBook());
+  }, []);
+
   return (
     <main id="missions">
       <tabel>
