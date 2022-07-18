@@ -5,11 +5,17 @@
 
 ## Built With
 
-- REACT & REDUX
-- ROUTERS
-Webpack, Stylelint, ESlint, React JS, React Router, Redux, Jest, Github Actions
+- HTML, CSS, Javascript
+- Webpack, Stylelint, ESlint, React JS, React Router, Redux, Redux Logger, Jest, Github Actions
 
 To get a local copy up and running follow these simple example steps.
+
+
+## Live Demo
+
+[https://space-travelers-hub-nayankaran.netlify.app/](https://space-travelers-hub-nayankaran.netlify.app/)
+
+[https://space-travelers-hub-nayankaran.herokuapp.com/](https://space-travelers-hub-nayankaran.herokuapp.com/)
 
 ### Clone this repository
 
@@ -46,7 +52,7 @@ Run ```npm start```
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/abdulhamiid/bookstore/issues).
+Feel free to check the [issues page](../../issues/).
 
 ## Show your support
 
@@ -54,9 +60,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- Thanks to Microverse
 
 
 ## 📝 License
