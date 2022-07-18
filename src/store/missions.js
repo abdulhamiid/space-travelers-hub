@@ -19,10 +19,21 @@ const allMission = []
 const FETCH_DATA = 'FETCH_DATA_FROM_API';
 
 // Action Creators
-const fetch = (mission) => ({
+const fetchMission = (mission) => ({
   type: FETCH_DATA,
   payload: mission,
 });
+
+export default function missionReducer(state = allMission, action) {
+  switch (action.type) {
+    case FETCH_DATA: {
+      return action.payload;
+    }
+
+    default:
+      return state;
+  }
+}
 
 // mission api
 const url = 'https://api.spacexdata.com/v3/missions';
@@ -39,5 +50,5 @@ export const fetchdata = () => async (dispatch) => {
       description,
     };
   });
-  dispatch(fetch(data));
+  dispatch(fetchMission(data));
 };
