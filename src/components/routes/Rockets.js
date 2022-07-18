@@ -1,10 +1,7 @@
 import React from 'react';
 
-const Rockets = () => {
-  return (
-    <main id="rockets">
-    </main>
-  );
-};
+const Rockets = () => (
+  <main id="rockets" />
+);
 
 export default Rockets;
