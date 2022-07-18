@@ -1,0 +1,24 @@
+.App-logo {
+  height: 56px;
+}
+
+#root > header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 64px;
+  border-bottom: 1px solid black;
+}
+
+#root > header > nav {
+  display: flex;
+  gap: 16px;
+}
+
+#root > header > nav > a {
+  text-decoration: none;
+}
+
+#root > header > nav > a.active-link {
+  text-decoration: underline;
+}
