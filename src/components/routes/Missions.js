@@ -5,8 +5,6 @@ import styles from './Missions.module.css';
 
 const Missions = () => {
   const state = useSelector((state) => state.missions);
-  console.log(state);
-
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchData());
