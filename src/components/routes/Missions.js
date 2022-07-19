@@ -1,39 +1,39 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux/es/exports';
+import { fetchData } from '../../store/missions';
+import styles from './Missions.module.css';
 
 const Missions = () => {
-  const state = useSelector((state) => state.allMission);
+  const state = useSelector((state) => state.missions);
+  console.log(state);
 
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchBook());
-  }, []);
+    dispatch(fetchData());
+  }, [dispatch]);
 
   return (
     <main id="missions">
-      <tabel>
-        <thead>
-          <tr>
-            <td>Mission</td>
-            <td>Description</td>
-            <td>Status</td>
+      <table className={styles.table}>
+        <tr>
+          <th>Mission</th>
+          <th>Description</th>
+          <th>Status</th>
+        </tr>
+        {state.map((item) => (
+          /* eslint-disable camelcase */
+          <tr key={item.mission_id} className={styles.tableRow}>
+            <td>{item.mission_name}</td>
+            <td>{item.description}</td>
+            <td>
+              <button type="button">NOT A MEMBER</button>
+            </td>
+            <td>
+              <button type="button">Join Mission</button>
+            </td>
           </tr>
-        </thead>
-        <tbody>
-          {
-            array.map(item => (
-              <tr>
-                <td>{item.mission_name}</td>
-                <td>{item.description}</td>
-                <td>
-                  <button>NOT A MEMBER</button>
-                  <button>Join Mission</button>
-                </td>
-              </tr>
-            ))
-          }
-        </tbody>
-        
-      </tabel>
+        ))}
+      </table>
     </main>
   );
 };
