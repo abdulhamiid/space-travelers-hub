@@ -27,10 +27,10 @@ const Missions = () => {
               <td>{item.mission_name}</td>
               <td>{item.description}</td>
               <td>
-                <button type="button">NOT A MEMBER</button>
+                <button type="button" className={styles.memberBtn}>NOT A MEMBER</button>
               </td>
               <td>
-                <button type="button">Join Mission</button>
+                <button type="button" className={styles.missionBtn}>Join Mission</button>
               </td>
             </tr>
           ))}
