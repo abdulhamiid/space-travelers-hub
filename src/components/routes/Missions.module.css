@@ -4,17 +4,23 @@ body {
   font-family: 'Roboto', sans-serif;
   line-height: 1.5;
 }
+
 table {
   margin: auto;
   width: 90%;
   margin-top: 30px;
-
 }
 
-table, th, td {
+table,
+th,
+td {
   border: 1px solid #ccc;
   border-collapse: collapse;
   padding: 20px;
+}
+
+tbody > tr:nth-child(odd) {
+  background-color: #f4f4f4;
 }
 
 .memberBtn {
