@@ -31,3 +31,28 @@ body {
   text-decoration: underline;
   color: #333;
 }
+
+#my-profile {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 90%;
+  margin: auto;
+  gap: 40px;
+}
+
+#missions h2 {
+  font-size: 20px;
+  margin: 20px 0;
+}
+#missions > ul {
+  border: 1px solid #ccc;
+}
+
+#missions > ul li {
+  border-bottom: 1px solid #ccc;
+  padding: 15px;
+}
+
+#missions > ul li:last-child {
+  border: none;
+}
