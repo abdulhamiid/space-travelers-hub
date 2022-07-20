@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux/es/exports';
-import { fetchData } from '../../store/missions';
+import { addMember, addMission, fetchData } from '../../store/missions';
 import styles from './Missions.module.css';
 
 const Missions = () => {
@@ -9,6 +9,16 @@ const Missions = () => {
   useEffect(() => {
     dispatch(fetchData());
   }, [dispatch]);
+
+  const handleMember = (id) => {
+    dispatch(addMember(id));
+    console.log(state);
+  };
+
+  const handleMission = (id) => {
+    dispatch(addMission(id));
+    console.log(state);
+  };
 
   return (
     <main id="missions">
@@ -27,10 +37,10 @@ const Missions = () => {
               <td>{item.mission_name}</td>
               <td>{item.description}</td>
               <td>
-                <button type="button" className={styles.memberBtn}>NOT A MEMBER</button>
+                <button type="button" className={styles.memberBtn} onClick={() => handleMember(item.mission_id)}>NOT A MEMBER</button>
               </td>
               <td>
-                <button type="button" className={styles.missionBtn}>Join Mission</button>
+                <button type="button" className={styles.missionBtn} onClick={() => handleMission(item.mission_id)}>Join Mission</button>
               </td>
             </tr>
           ))}
