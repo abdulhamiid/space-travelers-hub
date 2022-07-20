@@ -12,7 +12,7 @@ const Missions = () => {
 
   return (
     <main id="missions">
-      <table className={styles.table}>
+      <table className={styles.missionTable}>
         <thead>
           <tr>
             <th>Mission</th>
