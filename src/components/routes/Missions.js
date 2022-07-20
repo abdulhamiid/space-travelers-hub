@@ -10,7 +10,7 @@ const Missions = () => {
     dispatch(fetchData());
   }, [dispatch]);
 
-  const handleMission = (id) => {
+  const toggleStatus = (id) => {
     dispatch(joinMission(id));
   };
 
@@ -34,7 +34,7 @@ const Missions = () => {
                 <button type="button" className={item.reserved ? styles.activeMember : styles.notActive}>{item.reserved ? 'Active Member' : 'NOT A MEMBER'}</button>
               </td>
               <td>
-                <button type="button" className={item.reserved ? styles.leaveMissionBtn : styles.joinMissionBtn} onClick={() => handleMission(item.mission_id)}>
+                <button type="button" className={item.reserved ? styles.leaveMissionBtn : styles.joinMissionBtn} onClick={() => toggleStatus(item.mission_id)}>
                   {item.reserved ? 'Leave ' : 'Join '}
                   Mission
                 </button>
