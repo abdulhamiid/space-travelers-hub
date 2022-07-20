@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux/es/exports';
-import { addMember, addMission, fetchData } from '../../store/missions';
+import { joinMission, fetchData } from '../../store/missions';
 import styles from './Missions.module.css';
 
 const Missions = () => {
@@ -10,14 +10,8 @@ const Missions = () => {
     dispatch(fetchData());
   }, [dispatch]);
 
-  const handleMember = (id) => {
-    dispatch(addMember(id));
-    console.log(state);
-  };
-
   const handleMission = (id) => {
-    dispatch(addMission(id));
-    console.log(state);
+    dispatch(joinMission(id));
   };
 
   return (
@@ -37,10 +31,13 @@ const Missions = () => {
               <td>{item.mission_name}</td>
               <td>{item.description}</td>
               <td>
-                <button type="button" className={styles.memberBtn} onClick={() => handleMember(item.mission_id)}>NOT A MEMBER</button>
+                <button type="button" className={item.reserved ? styles.activeMember : styles.notActive}>{item.reserved ? 'Active member' : 'NOT A MEMBER'}</button>
               </td>
               <td>
-                <button type="button" className={styles.missionBtn} onClick={() => handleMission(item.mission_id)}>Join Mission</button>
+                <button type="button" className={item.reserved ? styles.leaveMissionBtn : styles.joinMissionBtn} onClick={() => handleMission(item.mission_id)}>
+                  {item.reserved ? 'Leave ' : 'Join '}
+                  Mission
+                </button>
               </td>
             </tr>
           ))}
