@@ -2,7 +2,6 @@ import axios from 'axios';
 
 // Actions
 const FETCH_DATA = 'FETCH_DATA_FROM_API';
-const ADD_MEMBER = 'ADD_MEMBER';
 const ADD_MISSION = 'ADD_MISSION';
 
 const missions = [];
@@ -14,22 +13,13 @@ export default function missionsReducer(state = missions, action) {
       return action.payload;
     }
 
-    case ADD_MEMBER: {
-      return {
-        ...state.map((mission) => {
-          if (mission.id !== action.id) { return mission; }
-          return { ...mission, member: true };
-        }),
-      };
-    }
-
     case ADD_MISSION: {
-      return {
-        ...state.map((mission) => {
-          if (mission.id === action.id) { return mission; }
-          return { ...mission, join_mission: true };
-        }),
-      };
+      return state.map((mission) => {
+        if (mission.mission_id !== action.id) {
+          return mission;
+        }
+        return { ...mission, reserved: !mission.reserved };
+      });
     }
 
     default:
@@ -43,12 +33,7 @@ const fetchMission = (payload) => ({
   payload,
 });
 
-export const addMember = (id) => ({
-  type: ADD_MEMBER,
-  id,
-});
-
-export const addMission = (id) => ({
+export const joinMission = (id) => ({
   type: ADD_MISSION,
   id,
 });
@@ -68,8 +53,7 @@ export const fetchData = () => async (dispatch) => {
       mission_id,
       mission_name,
       description,
-      member: false,
-      join_mission: false,
+      reserved: false,
     };
   });
   dispatch(fetchMission(data));
