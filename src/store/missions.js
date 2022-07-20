@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Actions
 const FETCH_DATA = 'FETCH_DATA_FROM_API';
-const ADD_MISSION = 'ADD_MISSION';
+const TOGGLE_RESERVATION = 'TOGGLE_RESERVATION';
 
 const missions = [];
 
@@ -13,7 +13,7 @@ export default function missionsReducer(state = missions, action) {
       return action.payload;
     }
 
-    case ADD_MISSION: {
+    case TOGGLE_RESERVATION: {
       return state.map((mission) => {
         if (mission.mission_id !== action.id) {
           return mission;
@@ -34,7 +34,7 @@ const fetchMission = (payload) => ({
 });
 
 export const joinMission = (id) => ({
-  type: ADD_MISSION,
+  type: TOGGLE_RESERVATION,
   id,
 });
 
