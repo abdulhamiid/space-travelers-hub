@@ -16,7 +16,7 @@
   background-color: #f4f4f4;
 }
 
-.memberBtn {
+.notActive {
   background-color: rgba(51, 51, 51, 0.7);
   width: 150px;
   border: none;
@@ -25,12 +25,41 @@
   color: #fff;
 }
 
-.missionBtn {
+.joinMissionBtn {
   background-color: #fff;
-  width: 120px;
+  width: 150px;
   border: 1px solid rgba(51, 51, 51, 0.9);
   padding: 10px;
   border-radius: 6px;
   font-size: 17px;
   color: rgba(51, 51, 51, 0.9);
+}
+
+.joinMissionBtn:hover {
+  cursor: pointer;
+}
+
+.leaveMissionBtn {
+  background-color: #fff;
+  width: 150px;
+  border: 1px solid rgba(233, 9, 9, 0.9);
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 17px;
+  color: rgba(233, 9, 9, 0.9);
+}
+
+.leaveMissionBtn:hover {
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(233, 9, 9, 0.9);
+}
+
+.activeMember {
+  background-color: #0290ff;
+  width: 150px;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 15px;
 }
