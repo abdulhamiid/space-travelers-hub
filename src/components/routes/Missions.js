@@ -4,7 +4,7 @@ import { fetchData } from '../../store/missions';
 import styles from './Missions.module.css';
 
 const Missions = () => {
-  const state = useSelector((state) => state.missions);
+  const state = useSelector((state) => state.entities.missions);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchData());
