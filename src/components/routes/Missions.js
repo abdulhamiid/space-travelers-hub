@@ -31,7 +31,7 @@ const Missions = () => {
               <td>{item.mission_name}</td>
               <td>{item.description}</td>
               <td>
-                <button type="button" className={item.reserved ? styles.activeMember : styles.notActive}>{item.reserved ? 'Active member' : 'NOT A MEMBER'}</button>
+                <button type="button" className={item.reserved ? styles.activeMember : styles.notActive}>{item.reserved ? 'Active Member' : 'NOT A MEMBER'}</button>
               </td>
               <td>
                 <button type="button" className={item.reserved ? styles.leaveMissionBtn : styles.joinMissionBtn} onClick={() => handleMission(item.mission_id)}>
