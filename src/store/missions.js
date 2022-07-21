@@ -2,6 +2,7 @@ import axios from 'axios';
 
 // Actions
 const FETCH_DATA = 'FETCH_DATA_FROM_API';
+const TOGGLE_RESERVATION = 'TOGGLE_RESERVATION';
 
 const missions = [];
 
@@ -10,6 +11,15 @@ export default function missionsReducer(state = missions, action) {
   switch (action.type) {
     case FETCH_DATA: {
       return action.payload;
+    }
+
+    case TOGGLE_RESERVATION: {
+      return state.map((mission) => {
+        if (mission.mission_id !== action.id) {
+          return mission;
+        }
+        return { ...mission, reserved: !mission.reserved };
+      });
     }
 
     default:
@@ -21,6 +31,11 @@ export default function missionsReducer(state = missions, action) {
 const fetchMission = (payload) => ({
   type: FETCH_DATA,
   payload,
+});
+
+export const joinMission = (id) => ({
+  type: TOGGLE_RESERVATION,
+  id,
 });
 
 /* eslint-disable camelcase */
@@ -38,6 +53,7 @@ export const fetchData = () => async (dispatch) => {
       mission_id,
       mission_name,
       description,
+      reserved: false,
     };
   });
   dispatch(fetchMission(data));
