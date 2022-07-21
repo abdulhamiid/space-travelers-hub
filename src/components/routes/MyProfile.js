@@ -1,11 +1,12 @@
 import React from 'react';
-import MyMission from '../views/MyMission';
+import MyMissions from '../views/MyMissons';
+import MyRockets from '../views/MyRockets';
+import styles from './MyProfile.module.css';
 
 const MyProfile = () => (
-  <main id="my-profile">
-    <MyMission />
-    {/* you can replace the second component below with => My Rocket */}
-    <MyMission />
+  <main id={styles.myProfile}>
+    <MyRockets />
+    <MyMissions />
   </main>
 );
 
