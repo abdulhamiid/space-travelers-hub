@@ -1,19 +1,20 @@
 import React from 'react';
-import { useSelector } from 'react-redux/es/exports';
+import { useSelector } from 'react-redux';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 const MyMissions = () => {
   const state = useSelector((state) => state.entities.missions);
   const missions = state.filter((mission) => mission.reserved !== false);
   return (
-    <div id="missions">
+    <div>
       <h2>My Missions</h2>
-      <ul>
+      <ListGroup>
         {
           missions.map((mission) => (
-            <li key={mission.mission_id}>{mission.mission_name}</li>
+            <ListGroup.Item key={mission.mission_id}>{mission.mission_name}</ListGroup.Item>
           ))
         }
-      </ul>
+      </ListGroup>
     </div>
   );
 };
