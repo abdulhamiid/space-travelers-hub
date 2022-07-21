@@ -5,8 +5,8 @@ import styles from './MyProfile.module.css';
 
 const MyProfile = () => (
   <main id={styles.myProfile}>
-    <MyRockets />
     <MyMissions />
+    <MyRockets />
   </main>
 );
 
