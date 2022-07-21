@@ -4,7 +4,6 @@ import { joinMission, fetchData } from '../../store/missions';
 import styles from './Missions.module.css';
 
 let dataFetched = false;
-
 const Missions = () => {
   const state = useSelector((state) => state.entities.missions);
   const dispatch = useDispatch();
