@@ -3,11 +3,16 @@ import { useSelector, useDispatch } from 'react-redux/es/exports';
 import { joinMission, fetchData } from '../../store/missions';
 import styles from './Missions.module.css';
 
+let apiCalled = false;
+
 const Missions = () => {
   const state = useSelector((state) => state.entities.missions);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchData());
+    if (apiCalled === false) {
+      apiCalled = true;
+      dispatch(fetchData());
+    }
   }, [dispatch]);
 
   const toggleStatus = (id) => {
