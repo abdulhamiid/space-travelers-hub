@@ -1,0 +1,24 @@
+.rocket {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.rocket > div {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rocket > img {
+  width: 256px;
+}
+
+.rocket > div > h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.rocket > div > button {
+  width: fit-content;
+}
