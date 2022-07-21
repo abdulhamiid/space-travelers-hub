@@ -1,0 +1,14 @@
+#myProfile {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  padding: 32px 64px;
+}
+
+#myProfile > div {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
