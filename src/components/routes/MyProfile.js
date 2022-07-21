@@ -1,11 +1,11 @@
 import React from 'react';
-import MissionDisplay from './MissionDisplay';
+import MyMission from '../views/MyMission';
 
 const MyProfile = () => (
   <main id="my-profile">
-    <MissionDisplay />
+    <MyMission />
     {/* you can replace the second component below with => My Rocket */}
-    <MissionDisplay />
+    <MyMission />
   </main>
 );
 

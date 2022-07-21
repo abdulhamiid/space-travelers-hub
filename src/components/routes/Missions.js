@@ -3,14 +3,14 @@ import { useSelector, useDispatch } from 'react-redux/es/exports';
 import { joinMission, fetchData } from '../../store/missions';
 import styles from './Missions.module.css';
 
-let apiCalled = false;
+let dataFetched = false;
 
 const Missions = () => {
   const state = useSelector((state) => state.entities.missions);
   const dispatch = useDispatch();
   useEffect(() => {
-    if (apiCalled === false) {
-      apiCalled = true;
+    if (dataFetched === false) {
+      dataFetched = true;
       dispatch(fetchData());
     }
   }, [dispatch]);

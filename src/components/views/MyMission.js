@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux/es/exports';
 
-const MissionDisplay = () => {
+const MyMission = () => {
   const state = useSelector((state) => state.entities.missions);
   const missions = state.filter((mission) => mission.reserved !== false);
   return (
@@ -18,4 +18,4 @@ const MissionDisplay = () => {
   );
 };
 
-export default MissionDisplay;
+export default MyMission;
