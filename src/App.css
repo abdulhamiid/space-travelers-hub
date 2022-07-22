@@ -5,6 +5,13 @@ body {
   line-height: 1.5;
 }
 
+h1,
+h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: 100%;
+}
+
 .App-logo {
   height: 56px;
 }
@@ -15,6 +22,11 @@ body {
   justify-content: space-between;
   padding: 16px 64px;
   border-bottom: 1px solid black;
+}
+
+#root > header > h1 {
+  margin-right: auto;
+  padding-left: 16px;
 }
 
 #root > header > nav {
@@ -29,10 +41,9 @@ body {
 
 #root > header > nav > a.active-link {
   text-decoration: underline;
-  color: #333;
 }
 
-h2 {
-  font-size: 1.5em;
-  font-weight: bold;
+#root > header > nav > a:nth-child(3) {
+  border-left: 2px solid black;
+  padding-left: 16px;
 }

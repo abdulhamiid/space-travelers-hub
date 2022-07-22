@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing MyRockets component Testing with snapshot 1`] = `
+<div>
+  <h2>
+    My Rockets
+  </h2>
+  <div
+    className="list-group"
+    onKeyDown={[Function]}
+  />
+</div>
+`;
