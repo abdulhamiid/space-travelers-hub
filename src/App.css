@@ -47,3 +47,26 @@ h2 {
   border-left: 2px solid black;
   padding-left: 16px;
 }
+
+
+@media (max-width: 768px) {
+  #root > header {
+    padding: 12px;
+  }
+
+  #root > header > nav > a:nth-child(3) {
+    border: none;
+    padding-left: 0;
+  }
+
+  #root > header > h1 {
+    margin-right: auto;
+    padding-left: 16px;
+    font-size: 14px;
+  }
+
+  #root > header > nav {
+    flex-direction: column;
+    gap: 16px;
+  }
+}

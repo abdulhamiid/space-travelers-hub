@@ -17,3 +17,9 @@
 .rocket > div > button {
   width: fit-content;
 }
+
+@media(max-width: 768px) {
+  .rocket {
+    flex-direction: column;
+  }
+}
