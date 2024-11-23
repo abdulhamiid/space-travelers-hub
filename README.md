@@ -13,7 +13,7 @@ To get a local copy up and running follow these simple example steps.
 
 ## Live Demo
 
-[https://space-travelers-hub-navy-pi.vercel.app/my-profile](https://space-travelers-hub-navy-pi.vercel.app/my-profile)
+[https://space-travelers-hub-navy-pi.vercel.app/](https://space-travelers-hub-navy-pi.vercel.app/)
 
 ### Clone this repository
 
