@@ -13,9 +13,7 @@ To get a local copy up and running follow these simple example steps.
 
 ## Live Demo
 
-[https://space-travelers-hub-nayankaran.netlify.app/](https://space-travelers-hub-nayankaran.netlify.app/)
-
-[https://space-travelers-hub-nayankaran.herokuapp.com/](https://space-travelers-hub-nayankaran.herokuapp.com/)
+[https://space-travelers-hub-navy-pi.vercel.app/my-profile](https://space-travelers-hub-navy-pi.vercel.app/my-profile)
 
 ### Clone this repository
 
