@@ -34,6 +34,19 @@ h2 {
   gap: 16px;
 }
 
+header a {
+  padding-left: 20px;
+  color: #000;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
 #root > header > nav > a {
   text-decoration: none;
   color: #0290ff;
@@ -46,6 +59,14 @@ h2 {
 #root > header > nav > a:nth-child(3) {
   border-left: 2px solid black;
   padding-left: 16px;
+}
+
+.nav-list {
+  display: block;
+}
+
+.hamburger-icon {
+  display: none;
 }
 
 @media (max-width: 768px) {
@@ -66,7 +87,8 @@ h2 {
   /* hamburger */
   .hamburger-menu {
     position: relative;
-    display: flex;
+    z-index: 2;
+    display: block;
     flex-direction: column;
   }
 
@@ -89,8 +111,15 @@ h2 {
     border-radius: 2px;
   }
 
-  .menu {
+  .nav-list {
+    display: none;
+  }
+
+  .nav-list.open {
     position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
     top: 40px;
     right: 0;
     background-color: #333;
@@ -98,8 +127,7 @@ h2 {
     padding: 10px;
     border-radius: 5px;
     width: 200px;
-    display: flex;
-    flex-direction: column;
+    height: 150px;
   }
 
   .menu ul {
@@ -111,13 +139,13 @@ h2 {
     margin: 10px 0;
   }
 
-  .menu a {
+  .nav-list a {
     color: white;
   }
 
   /* Animation for opening/closing */
   .hamburger-menu.open .hamburger-icon .bar:nth-child(1) {
-    transform: rotate(45deg);
+    transform: rotate(45deg) translate(4px, 4px);
     position: relative;
     top: 6px;
     display: block;
@@ -131,16 +159,5 @@ h2 {
     transform: rotate(-45deg);
     position: relative;
     top: -6px;
-  }
-
-  #root > header nav > a:nth-child(3) {
-    border: none;
-    padding-left: 0;
-  }
-
-  #root > header nav {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
   }
 }

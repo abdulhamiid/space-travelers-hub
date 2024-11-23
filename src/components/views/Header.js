@@ -9,24 +9,30 @@ const HamburgerMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  // Function to close the menu after navigation
+  const closeMenuAfterNavigation = () => {
+    setIsOpen(false);
+  };
+
   return (
     <header>
-      <img src={logo} className="App-logo" alt="logo" />
-      <h1>Space Travelers&apos; Hub</h1>
+      <NavLink onClick={closeMenuAfterNavigation} className="header" to="/">
+        <img src={logo} className="App-logo" alt="logo" />
+        <h1>Space Travelers&apos; Hub</h1>
+      </NavLink>
 
       <div className={`hamburger-menu ${isOpen ? 'open' : ''}`}>
-        <button className="hamburger-icon" onClick={toggleMenu}>
+
+        <button type="button" className="hamburger-icon" aria-label="lqbl4" onClick={toggleMenu}>
           <span className="bar" />
           <span className="bar" />
           <span className="bar" />
         </button>
-        {isOpen && (
-        <nav className="menu">
-          <NavLink className={({ isActive }) => (isActive ? 'active-link' : undefined)} to="/">Rockets</NavLink>
-          <NavLink className={({ isActive }) => (isActive ? 'active-link' : undefined)} to="/missions">Missions</NavLink>
-          <NavLink className={({ isActive }) => (isActive ? 'active-link' : undefined)} to="/my-profile">My Profile</NavLink>
+        <nav className={`nav-list ${isOpen ? 'open' : ''}`}>
+          <NavLink onClick={closeMenuAfterNavigation} className={({ isActive }) => (isActive ? 'active-link' : undefined)} to="/">Rockets</NavLink>
+          <NavLink onClick={closeMenuAfterNavigation} className={({ isActive }) => (isActive ? 'active-link' : undefined)} to="/missions">Missions</NavLink>
+          <NavLink onClick={closeMenuAfterNavigation} className={({ isActive }) => (isActive ? 'active-link' : undefined)} to="/my-profile">My Profile</NavLink>
         </nav>
-        )}
       </div>
     </header>
 
