@@ -1,17 +1,36 @@
-import React from 'react';
+import React, { useState } from "react";
 import { NavLink } from 'react-router-dom';
 import logo from '../../logo.png';
 
-const Header = () => (
-  <header>
-    <img src={logo} className="App-logo" alt="logo" />
-    <h1>Space Travelers&apos; Hub</h1>
-    <nav>
-      <NavLink className={({ isActive }) => (isActive ? 'active-link' : undefined)} to="/">Rockets</NavLink>
-      <NavLink className={({ isActive }) => (isActive ? 'active-link' : undefined)} to="/missions">Missions</NavLink>
-      <NavLink className={({ isActive }) => (isActive ? 'active-link' : undefined)} to="/my-profile">My Profile</NavLink>
-    </nav>
-  </header>
-);
+const HamburgerMenu = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-export default Header;
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  return (
+    <header>
+      <img src={logo} className="App-logo" alt="logo" />
+      <h1>Space Travelers&apos; Hub</h1>
+    
+      <div className={`hamburger-menu ${isOpen ? "open" : ""}`}>
+        <button className="hamburger-icon" onClick={toggleMenu}>
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+        </button>
+        {isOpen && (
+            <nav className="menu">
+              <NavLink className={({ isActive }) => (isActive ? 'active-link' : undefined)} to="/">Rockets</NavLink>
+              <NavLink className={({ isActive }) => (isActive ? 'active-link' : undefined)} to="/missions">Missions</NavLink>
+              <NavLink className={({ isActive }) => (isActive ? 'active-link' : undefined)} to="/my-profile">My Profile</NavLink>
+            </nav>     
+        )}
+      </div>
+    </header>
+
+  );
+};
+
+export default HamburgerMenu;

@@ -22,4 +22,8 @@
   .rocket {
     flex-direction: column;
   }
+
+  .rocket > img  {
+      width: 100%;
+  }
 }

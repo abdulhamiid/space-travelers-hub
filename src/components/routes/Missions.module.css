@@ -1,18 +1,18 @@
-.missionTable {
+table {
   margin: auto;
-  width: 90%;
+  width: 100%;
   margin-top: 30px;
 }
 
-.missionTable,
-.missionTable th,
-.missionTable td {
+table,
+table th,
+table td {
   border: 1px solid #ccc;
   border-collapse: collapse;
   padding: 20px;
 }
 
-.missionTable tbody > tr:nth-child(odd) {
+table tbody > tr:nth-child(odd) {
   background-color: #f4f4f4;
 }
 
@@ -43,7 +43,7 @@
   background-color: #fff;
   width: 150px;
   border: 1px solid rgba(233, 9, 9, 0.9);
-  padding: 10px;
+  padding: 6px;
   border-radius: 6px;
   font-size: 17px;
   color: rgba(233, 9, 9, 0.9);
@@ -51,15 +51,64 @@
 
 .leaveMissionBtn:hover {
   cursor: pointer;
-  box-shadow: 0 0 10px rgba(233, 9, 9, 0.9);
 }
 
 .activeMember {
-  background-color: #0290ff;
+  background-color: rgb(13, 202, 240);
   width: 150px;
   border: none;
   padding: 5px;
   border-radius: 5px;
   color: #fff;
   font-size: 15px;
+}
+
+
+@media(max-width: 768px) {
+  table {
+    border: 0;
+  }
+
+  table thead {
+    display: none;
+  }
+
+  table tr {
+    display: block;
+    border-bottom: 1.6px solid black;
+  }
+
+  table td {
+    display: block;
+    text-align: left;
+    padding-left: 120px;
+    position: relative;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    font-weight: bold;
+  }
+
+  table td:last-child {
+    border-bottom: 0;
+  }
+
+  .notActive {
+    background-color: rgba(51, 51, 51, 0.7);
+    width: 150px;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    color: #fff;
+  }
+  
+  .joinMissionBtn,
+  .leaveMissionBtn {
+    padding: 6px;
+    font-size: 14px;
+  }
 }

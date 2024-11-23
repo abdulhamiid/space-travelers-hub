@@ -50,13 +50,14 @@ h2 {
 
 
 @media (max-width: 768px) {
-  #root > header {
-    padding: 12px;
+
+  body {
+    font-size: 13px;
+     overflow: none;
   }
 
-  #root > header > nav > a:nth-child(3) {
-    border: none;
-    padding-left: 0;
+  #root > header {
+    padding: 12px;
   }
 
   #root > header > h1 {
@@ -65,8 +66,85 @@ h2 {
     font-size: 14px;
   }
 
-  #root > header > nav {
+  /* hamburger */
+  .hamburger-menu {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .bar {
+    width: 30px;
+    height: 4px;
+    background-color: #333;
+    border-radius: 2px;
+  }
+  
+  .menu {
+    position: absolute;
+    top: 40px;
+    right: 0;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .menu ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .menu li {
+    margin: 10px 0;
+  }
+  
+  .menu a {
+    color: white;
+  }
+  
+  /* Animation for opening/closing */
+  .hamburger-menu.open .hamburger-icon .bar:nth-child(1) {
+    transform: rotate(45deg);
+    position: relative;
+    top: 6px;
+    display: block;
+  }
+  
+  .hamburger-menu.open .hamburger-icon .bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger-menu.open .hamburger-icon .bar:nth-child(3) {
+    transform: rotate(-45deg);
+    position: relative;
+    top: -6px;
+  }
+
+  #root > header  nav > a:nth-child(3) {
+    border: none;
+    padding-left: 0;
+  }
+ 
+  #root > header  nav {
+    display: flex;
     flex-direction: column;
     gap: 16px;
   }
+  
 }

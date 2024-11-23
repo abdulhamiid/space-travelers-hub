@@ -32,9 +32,9 @@ const Missions = () => {
           {state.map((item) => (
             /* eslint-disable camelcase */
             <tr key={item.mission_id} className={styles.tableRow}>
-              <td>{item.mission_name}</td>
-              <td>{item.description}</td>
-              <td>
+              <td data-label="Mission">{item.mission_name}</td>
+              <td data-label="Description">{item.description}</td>
+              <td data-label="Status">
                 <button type="button" className={item.reserved ? styles.activeMember : styles.notActive}>{item.reserved ? 'Active Member' : 'NOT A MEMBER'}</button>
               </td>
               <td>
