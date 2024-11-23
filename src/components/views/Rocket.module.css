@@ -18,12 +18,12 @@
   width: fit-content;
 }
 
-@media(max-width: 768px) {
+@media (max-width: 768px) {
   .rocket {
     flex-direction: column;
   }
 
-  .rocket > img  {
-      width: 100%;
+  .rocket > img {
+    width: 100%;
   }
 }

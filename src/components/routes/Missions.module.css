@@ -63,8 +63,7 @@ table tbody > tr:nth-child(odd) {
   font-size: 15px;
 }
 
-
-@media(max-width: 768px) {
+@media (max-width: 768px) {
   table {
     border: 0;
   }
@@ -105,7 +104,7 @@ table tbody > tr:nth-child(odd) {
     border-radius: 5px;
     color: #fff;
   }
-  
+
   .joinMissionBtn,
   .leaveMissionBtn {
     padding: 6px;
