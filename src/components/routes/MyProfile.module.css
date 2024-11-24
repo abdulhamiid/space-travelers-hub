@@ -12,3 +12,9 @@
   width: 100%;
   box-sizing: border-box;
 }
+
+@media (max-width: 768px) {
+  #myProfile {
+    padding: 32px;
+  }
+}
