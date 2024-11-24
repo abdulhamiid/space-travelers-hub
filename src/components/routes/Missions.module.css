@@ -18,20 +18,16 @@ table tbody > tr:nth-child(odd) {
 
 .notActive {
   background-color: rgba(51, 51, 51, 0.7);
-  width: 150px;
   border: none;
-  padding: 5px;
   border-radius: 5px;
   color: #fff;
 }
 
 .joinMissionBtn {
   background-color: #fff;
-  width: 150px;
   border: 1px solid rgba(51, 51, 51, 0.9);
-  padding: 10px;
+  width: 150px;
   border-radius: 6px;
-  font-size: 17px;
   color: rgba(51, 51, 51, 0.9);
 }
 
@@ -41,11 +37,9 @@ table tbody > tr:nth-child(odd) {
 
 .leaveMissionBtn {
   background-color: #fff;
-  width: 150px;
   border: 1px solid rgba(233, 9, 9, 0.9);
-  padding: 6px;
+  width: 150px;
   border-radius: 6px;
-  font-size: 17px;
   color: rgba(233, 9, 9, 0.9);
 }
 
@@ -57,13 +51,19 @@ table tbody > tr:nth-child(odd) {
   background-color: rgb(13, 202, 240);
   width: 150px;
   border: none;
-  padding: 5px;
   border-radius: 5px;
   color: #fff;
-  font-size: 15px;
 }
 
 @media (max-width: 768px) {
+  .joinMissionBtn,
+  .activeMember,
+  .leaveMissionBtn {
+    width: auto;
+    padding: 0 6px;
+    font-size: 14px;
+  }
+
   table {
     border: 0;
   }
@@ -88,8 +88,14 @@ table tbody > tr:nth-child(odd) {
     content: attr(data-label);
     position: absolute;
     left: 10px;
-    top: 8px;
+    top: 16px;
     font-weight: bold;
+  }
+
+  table,
+  table th,
+  table td {
+    border: none;
   }
 
   table td:last-child {
@@ -98,16 +104,8 @@ table tbody > tr:nth-child(odd) {
 
   .notActive {
     background-color: rgba(51, 51, 51, 0.7);
-    width: 150px;
     border: none;
-    padding: 5px;
     border-radius: 5px;
     color: #fff;
-  }
-
-  .joinMissionBtn,
-  .leaveMissionBtn {
-    padding: 6px;
-    font-size: 14px;
   }
 }
