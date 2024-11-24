@@ -35,8 +35,12 @@ h2 {
 }
 
 header a {
-  padding-left: 20px;
   color: #000;
+}
+
+.nav-list a {
+  color: #0290ff;
+  padding-left: 32px;
 }
 
 .header {
@@ -74,8 +78,18 @@ header a {
     font-size: 13px;
   }
 
+  .App-logo {
+    height: 42px;
+  }
+
+  h1,
+  h2 {
+    font-size: 16px;
+  }
+
   #root > header {
-    padding: 12px;
+    padding: 12px 32px;
+    margin: auto;
   }
 
   #root > header > h1 {
